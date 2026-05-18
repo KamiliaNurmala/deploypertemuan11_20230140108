@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-50 to-slate-100 min-h-screen flex items-center justify-center p-4">
+
+<div class="bg-white w-full max-w-md rounded-2xl shadow-xl overflow-hidden border border-slate-200">
+    <!-- Header -->
+    <div class="bg-gradient-to-r from-blue-600 to-indigo-700 p-6 text-center">
+        <div class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-4 ring-4 ring-white/30">
+            <i class="fas fa-user-circle text-4xl text-white"></i>
+        </div>
+        <h1 class="text-2xl font-bold text-white mb-1">Selamat Datang</h1>
+        <p class="text-blue-100 text-sm">Profil Pengguna</p>
+    </div>
+
+    <!-- Content -->
+    <div class="p-6 space-y-5">
+        <!-- Username -->
+        <div class="group">
+            <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">
+                <i class="fas fa-user mr-2 text-blue-500"></i>Username
+            </label>
+            <div class="bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 flex items-center">
+                <span th:text="${user.username}" class="text-slate-800 font-medium text-lg"></span>
+            </div>
+        </div>
+
+        <!-- Nama -->
+        <div class="group">
+            <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">
+                <i class="fas fa-id-card mr-2 text-blue-500"></i>Nama
+            </label>
+            <div class="bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 flex items-center">
+                <span th:text="${profile.nama}" class="text-slate-800 font-medium text-lg"></span>
+            </div>
+        </div>
+
+        <!-- Alamat -->
+        <div class="group">
+            <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">
+                <i class="fas fa-map-marker-alt mr-2 text-blue-500"></i>Alamat
+            </label>
+            <div class="bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 flex items-center">
+                <span th:text="${profile.alamat}" class="text-slate-800 font-medium text-lg"></span>
+            </div>
+        </div>
+
+        <!-- Logout Button -->
+        <div class="pt-4">
+            <a th:href="@{/logout}"
+               class="flex items-center justify-center w-full bg-red-500 hover:bg-red-600 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 shadow-lg shadow-red-500/30 hover:shadow-red-500/50 hover:-translate-y-0.5">
+                <i class="fas fa-sign-out-alt mr-2"></i>
+                Logout
+            </a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
